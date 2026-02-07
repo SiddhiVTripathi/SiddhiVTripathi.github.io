@@ -41,6 +41,22 @@ const observer = new IntersectionObserver(
 
 revealElements.forEach((el) => observer.observe(el));
 
+// ===== Newsletter form (demo) =====
+const newsletterForm = document.getElementById("newsletterForm");
+newsletterForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const btn = newsletterForm.querySelector("button");
+  btn.textContent = "Subscribed!";
+  btn.style.background = "#2ecc71";
+  btn.style.borderColor = "#2ecc71";
+  setTimeout(() => {
+    btn.textContent = "Subscribe";
+    btn.style.background = "";
+    btn.style.borderColor = "";
+    newsletterForm.reset();
+  }, 2500);
+});
+
 // ===== Contact form (demo) =====
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", (e) => {
